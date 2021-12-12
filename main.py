@@ -1,4 +1,4 @@
-# If you are running this file for the first time, then run it first to create "congif.json" and run it againg to get the values and run the bot 
+# If you are running this file for the first time, then run it first to create "config.json" and run it againg to get the values and run the bot 
 import discord #pip install discord
 from discord.ext import commands
 
@@ -12,17 +12,17 @@ if os.path.exists(os.getcwd() + "/config.json"):
 
 else:
     # Set the token value as your token for the bot
-    configTemplate = {"Token":"", "Prefix":"!"}
+    configTemplate = {"Token":"", "Prefix":"!"} #Change the prefix accordig to your need and like
     # Dumping the values in the json file
     with open(os.getcwd() + "/config.json", "w+") as f:
         json.dump(configTemplate,f)   
 
 # Creating variables
 token=configData["Token"]
-prefix=configData['Prefix']
+prefix=configData['Prefix']#This is the Prefix for the bot commands like !hello or ?hello
 
 bot = commands.Bot(command_prefix=prefix)
-bot.remove_command("help")# Removing Default Help Command to create my own
+bot.remove_command("help")# Removing Default Help Command to create our own
 
 # Online indicator
 @bot.event
@@ -143,6 +143,5 @@ async def welcome(ctx,member:discord.Member):
     embed.add_field(name="Welcome to our server",value=f"Hello, {member} welcome to our server, please read the rules once and stayed Tunned to uor event and register for them")
     embed.add_field(name="Enjoy",value="Enjoy Our Server")
     await ctx.send(embed=embed)
-                
 # Executing the bot
 bot.run(token)    
