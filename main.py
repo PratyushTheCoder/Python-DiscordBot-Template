@@ -140,7 +140,7 @@ async def welcome(ctx,member:discord.Member):
     embed=discord.Embed(title="Welcome",colour=member.colour)
     embed.set_thumbnail(url=member.avatar_url)
     embed.add_field(name="User",value=member)
-    embed.add_field(name="Welcome to our server",value=f"Hello, {member} welcome to our server, please read the rules once and stayed Tunned to uor event and register for them")
+    embed.add_field(name="Welcome to our server",value=f"Hello, {member} welcome to our server, please read the rules once and stayed Tunned to our event and register for them")
     embed.add_field(name="Enjoy",value="Enjoy Our Server")
     await ctx.send(embed=embed)
 # Executing the bot
