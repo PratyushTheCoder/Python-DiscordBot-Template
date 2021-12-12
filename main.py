@@ -11,7 +11,7 @@ if os.path.exists(os.getcwd() + "/config.json"):
         configData=json.load(f)
 
 else:
-    # Set the token value as your token for th bot
+    # Set the token value as your token for the bot
     configTemplate = {"Token":"", "Prefix":"!"}
     # Dumping the values in the json file
     with open(os.getcwd() + "/config.json", "w+") as f:
@@ -22,17 +22,17 @@ token=configData["Token"]
 prefix=configData['Prefix']
 
 bot = commands.Bot(command_prefix=prefix)
-bot.remove_command("help")# Removing Default Help Command
+bot.remove_command("help")# Removing Default Help Command to create my own
 
 # Online indicator
 @bot.event
 async def on_ready():
-    print("Bot Online as Gamer's Hall Bot#4493.")
+    print(f"Bot Online as {bot.user.name}")
 
 # Ping Command
 @bot.command()    
 async def ping(ctx):
-    latency = round(bot.latency*1000,1)# Rounding off the lantency of the bot
+    latency = round(bot.latency*1000,1)# Rounding off the lantency of the bot 
     await ctx.send(f"Pong! {latency}ms.")
     print("Message sent!")
 #Hi Command
