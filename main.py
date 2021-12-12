@@ -1,4 +1,4 @@
-# If you are running this file for the first time, then run it first to create "congif.json" and run it againg to get the values
+# If you are running this file for the first time, then run it first to create "congif.json" and run it againg to get the values and run the bot 
 import discord #pip install discord
 from discord.ext import commands
 
